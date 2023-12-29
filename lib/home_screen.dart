@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen(this.startQuiz, {super.key});
@@ -7,36 +8,39 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Opacity(
-          opacity: 0.3,
-          child: Image.asset(
-            'assets/images/quiz-logo.png',
-            width: 200,
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Opacity(
+            opacity: 0.3,
+            child: Image.asset(
+              'assets/images/quiz-logo.png',
+              width: 200,
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-        const Text(
-          'Learn Flutter the Fun Way!',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
+          const SizedBox(
+            height: 30,
           ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-        OutlinedButton.icon(
-          style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-          onPressed: startQuiz,
-          icon: const Icon(Icons.arrow_right_alt),
-          label: const Text('Start Quiz'),
-        )
-      ],
+          Text(
+            'Learn Flutter the Fun Way!',
+            style: GoogleFonts.lato(
+              color: Color.fromARGB(255, 215, 196, 249),
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+            onPressed: startQuiz,
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text('Start Quiz'),
+          )
+        ],
+      ),
     );
   }
 }
